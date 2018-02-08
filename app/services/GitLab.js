@@ -3,15 +3,22 @@ var request = require('request'),
 
 module.exports = function () {
     var self = this,
+        log = function (text, debug) {
+            if(debug) {
+                console.log(new Date().toLocaleTimeString(), '|', text);
+            }
+        },
         flatten = function(arrayOfArray) {
             return [].concat.apply([], arrayOfArray);
         },
         buildProjectUrl = function(projectId) {
             return self.config.url + '/api/v4/projects/' + projectId;
         },
-        buildProjectPipelinesUrl = function(projectId, ref) {
+        buildProjectPipelinesUrl = function(projectId, ref, scope) {
             var url = self.config.url + '/api/v4/projects/' + projectId + '/pipelines';
-            if(ref) { url = url + '?ref=' + ref; }
+            if(ref) {
+                url = url + '?ref=' + ref;
+            } else { url = url + '?scope=' + 'tags'; }
             return url;
         },
         buildPipelineDetailsUrl = function(projectId, pipelineId) {
@@ -37,7 +44,7 @@ module.exports = function () {
             });
         },
         getProjectPipelines = function(project, callback) {
-            makeRequest(buildProjectPipelinesUrl(project.id, project.ref), function(err, pipelines) {
+            makeRequest(buildProjectPipelinesUrl(project.id, project.ref, project.scope), function(err, pipelines) {
                 if(err) {
                     callback(err);
                     return;
