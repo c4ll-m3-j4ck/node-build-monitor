@@ -25,17 +25,9 @@
     line-height: normal;
 }
 
-.default-theme .flex-container {
-  padding: 0px;
-  margin: 0 auto 0 auto;
-  height: 100%;
-  width: 100%;
-}
-
 .default-theme .flex-item {
   float: left;
-  width: 33%;
-  height: 25%;
+  width: 50%;
   color: transparent;
   position: relative;
 }
