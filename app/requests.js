@@ -20,7 +20,7 @@ module.exports = {
           json: true
         },
         function (error, response, body) {
-          callback(error, body);
+          callback(error, response, body);
         });
     }
   }
