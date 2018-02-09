@@ -15,9 +15,13 @@
   vertical-align: middle;
 }
 
-.default-theme .medium-height {
-    line-height: 40px;
-    height: 40px;
+.default-theme .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.default-theme .flex-item {
+  flex: 1 0 50%;
 }
 
 .default-theme .reset-height {
@@ -62,12 +66,15 @@
 }
 
 .default-theme .flex-item .info-block {
-  float: left;
+  display: block;
+  width: 100%;
   font-size: 15pt;
 }
 
 .default-theme .flex-item .project {
+  font-family: 'open_sans_condensedbold';
   font-weight: bold;
+  font-size: 32pt;
 }
 
 .default-theme .flex-item .project-definition-separator {
@@ -115,7 +122,8 @@
 }
 
 .default-theme .flex-item .reason-block {
-  float: right;
+  display: block;
+  width: 100%;
 }
 
 .default-theme .flex-item .for {

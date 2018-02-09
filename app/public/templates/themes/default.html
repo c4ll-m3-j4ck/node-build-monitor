@@ -7,7 +7,6 @@
         <div class="medium-height nowrap prio-vertical-two">
           <span class="info-block middle">
             <span data-bind="text: project" class="project"></span>
-            <span data-bind="text: definition, visible: definition" class="definition project-definition-separator"></span>
           </span>
           <span class="reason-block prio-horizontal-two">
             <span class="reason-icon middle fa fa-cog"></span>
@@ -26,10 +25,6 @@
         </div>
         <div class="clear"></div>
         <div class="medium-height nowrap prio-vertical-three">
-          <span class="middle requestedFor-block">
-            <span class="middle fa fa-user"></span>
-            <span data-bind="text: requestedFor" class="middle for"></span>
-          </span>
           <span class="middle warnings prio-horizontal-one">
             <span data-bind="visible: hasWarnings" class="middle fa fa-exclamation-triangle"></span>
             <span data-bind="visible: hasErrors" class="middle fa fa-times-circle"></span>
