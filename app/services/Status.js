@@ -27,7 +27,7 @@ module.exports = function () {
         },
         simplifyBuild = function (res) {
             return {
-                id: '1000|2000',
+                id: self.configuration.id,
                 number: res.statusCode,
                 project: self.configuration.name,
                 definition: 'Status',
