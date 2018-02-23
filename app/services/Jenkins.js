@@ -160,7 +160,7 @@ module.exports = function () {
         simplifyBuild = function (res) {
             return {
                 id: res.jobId + '|' + res.id,
-                project: res.jobId,
+                project: self.configuration.label,
                 number: res.number,
                 isRunning: res.building,
                 startedAt: parseDate(res.timestamp),
